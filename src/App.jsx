@@ -1,19 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import FeatureGrid from './components/FeatureGrid';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import LegalPage from './pages/LegalPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background-light flex flex-col font-sans text-text-main selection:bg-primary/20 selection:text-primary">
-      <Header />
-      <main className="flex-grow">
-        <Hero />
-        <FeatureGrid />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<LegalPage type="privacy" />} />
+        <Route path="/terms" element={<LegalPage type="terms" />} />
+      </Routes>
+    </Router>
   );
 }
 

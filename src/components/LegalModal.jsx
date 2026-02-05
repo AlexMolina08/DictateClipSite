@@ -2,7 +2,9 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-export default function LegalModal({ isOpen, onClose, title, children }) {
+import LegalContent from './LegalContent';
+
+export default function LegalModal({ isOpen, onClose, title, type }) {
     if (!isOpen) return null;
 
     return (
@@ -34,8 +36,8 @@ export default function LegalModal({ isOpen, onClose, title, children }) {
                             </button>
                         </div>
 
-                        <div className="p-6 overflow-y-auto prose prose-sm max-w-none text-text-secondary">
-                            {children}
+                        <div className="p-6 overflow-y-auto">
+                            <LegalContent type={type} />
                         </div>
                     </motion.div>
                 </>
@@ -43,72 +45,3 @@ export default function LegalModal({ isOpen, onClose, title, children }) {
         </AnimatePresence>
     );
 }
-
-export const PrivacyContent = () => (
-    <div className="space-y-4">
-        <p><strong>Last Updated: February 5, 2026</strong></p>
-        <div>
-            <strong>1. Introduction</strong>
-            <p>DictateClip ("we") is committed to privacy. We operate under "Privacy by Design."</p>
-        </div>
-        <div>
-            <strong>2. Data Collection</strong>
-            <ul className="list-disc pl-5">
-                <li>Voice Data: Sent temporarily to OpenAI API for transcription. NOT stored on our servers. Deleted immediately after processing.</li>
-                <li>Transcriptions: Stored locally and synced via your personal iCloud (CloudKit). We cannot access them.</li>
-                <li>Analytics: Anonymous aggregate data only.</li>
-            </ul>
-        </div>
-        <div>
-            <strong>3. Third Parties</strong>
-            <ul className="list-disc pl-5">
-                <li>OpenAI: Does not use API data for training models.</li>
-                <li>Apple iCloud: End-to-end encrypted storage.</li>
-            </ul>
-        </div>
-        <div>
-            <strong>4. GDPR (EU)</strong>
-            <ul className="list-disc pl-5">
-                <li>Controller: DictateClip (Granada, Spain).</li>
-                <li>Rights: You may delete data via the app (which removes it from iCloud).</li>
-            </ul>
-        </div>
-        <div>
-            <strong>5. Contact</strong>
-            <p>support@dictateclip.com</p>
-        </div>
-    </div>
-);
-
-export const TermsContent = () => (
-    <div className="space-y-4">
-        <p><strong>Last Updated: February 5, 2026</strong></p>
-        <div>
-            <strong>1. Acceptance</strong>
-            <p>By using DictateClip, you agree to these terms.</p>
-        </div>
-        <div>
-            <strong>2. License</strong>
-            <p>Revocable, non-exclusive license for personal use on Apple devices.</p>
-        </div>
-        <div>
-            <strong>3. Usage</strong>
-            <ul className="list-disc pl-5">
-                <li>Free Tier: 4 transcriptions/day.</li>
-                <li>Pro: Unlimited (billed via App Store).</li>
-            </ul>
-        </div>
-        <div>
-            <strong>4. Disclaimer</strong>
-            <p>App provided "as is". AI transcription accuracy is not guaranteed.</p>
-        </div>
-        <div>
-            <strong>5. Liability</strong>
-            <p>We are not liable for damages arising from use.</p>
-        </div>
-        <div>
-            <strong>6. Governing Law</strong>
-            <p>Laws of Spain.</p>
-        </div>
-    </div>
-);
