@@ -1,7 +1,5 @@
 **Last Updated: February 5, 2026**
 
-# Privacy Policy
-
 **1. Introduction**
 DictateClip ("we") is committed to privacy. We operate under "Privacy by Design."
 
