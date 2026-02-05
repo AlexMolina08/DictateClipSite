@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DictateClip - Fast Voice Transcription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0071e3", /* Updated to a more Apple-like blue */
+                        "background-light": "#f5f5f7", /* Apple-style light gray */
+                        "background-dark": "#000000", /* Deep black for contrast */
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c1c1e",
+                        "text-main": "#1d1d1f",
+                        "text-secondary": "#86868b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "apple": "0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.04)",
+                        "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
+                        "hero": "0 20px 50px -12px rgba(0, 0, 0, 0.15)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .dark .glass-nav {
+            background: rgba(28, 28, 30, 0.75);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-text-gradient {
+            background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .hero-text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white overflow-x-hidden antialiased selection:bg-primary/20 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Sticky Header -->
+<header class="glass-nav sticky top-0 z-50 w-full">
+<div class="mx-auto max-w-[980px] px-6 h-12 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer group">
+<div class="text-text-main dark:text-white transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined !text-[24px]">graphic_eq</span>
+</div>
+<span class="text-sm font-semibold tracking-tight text-text-main dark:text-white">DictateClip</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[12px] font-normal text-text-main/80 hover:text-primary dark:text-white/80 dark:hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-[12px] font-normal text-text-main/80 hover:text-primary dark:text-white/80 dark:hover:text-primary transition-colors" href="#">Privacy</a>
+</nav>
+<button class="bg-text-main text-white dark:bg-white dark:text-black rounded-full px-3 py-1 text-[12px] font-medium hover:bg-primary dark:hover:bg-gray-200 transition-colors">
+                        Download
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full max-w-[980px] px-6 pt-20 pb-16 md:pt-28 md:pb-24 flex flex-col items-center text-center">
+<div class="mb-6 flex flex-col gap-3 max-w-3xl animate-fade-in-up">
+<h1 class="hero-text-gradient text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05]">
+                        The fastest way to get voice into your clipboard.
+                    </h1>
+<p class="text-xl md:text-2xl font-normal text-text-secondary dark:text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+                        Instant transcription that syncs across your Apple devices seamlessly.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 mb-16">
+<button class="bg-primary text-white rounded-full px-6 py-3 text-[17px] font-medium hover:bg-blue-600 transition-all transform active:scale-95 flex items-center gap-2 shadow-lg shadow-blue-500/25">
+                        Download for iOS
+                        <span class="material-symbols-outlined !text-[18px]">arrow_forward</span>
+</button>
+<button class="bg-white dark:bg-surface-dark text-primary border border-primary/20 rounded-full px-6 py-3 text-[17px] font-medium hover:bg-gray-50 dark:hover:bg-white/10 transition-all transform active:scale-95">
+                        Download for Mac
+                    </button>
+</div>
+<!-- Hero Visual -->
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] max-w-[980px] rounded-xl overflow-hidden shadow-hero ring-1 ring-black/5 dark:ring-white/10 group bg-surface-light dark:bg-surface-dark">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-black opacity-50"></div>
+<div class="relative h-full w-full flex items-center justify-center p-8">
+<!-- Abstract Waveform Visual -->
+<div class="flex items-center justify-center gap-1 md:gap-2 h-32 w-full">
+<div class="w-2 md:w-3 bg-primary rounded-full h-8 animate-[pulse_1s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary/80 rounded-full h-16 animate-[pulse_1.2s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary/60 rounded-full h-24 animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary rounded-full h-32 animate-[pulse_1.5s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary/90 rounded-full h-20 animate-[pulse_1.1s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary/50 rounded-full h-12 animate-[pulse_0.9s_ease-in-out_infinite]"></div>
+<div class="w-2 md:w-3 bg-primary/30 rounded-full h-6 animate-[pulse_1.3s_ease-in-out_infinite]"></div>
+</div>
+</div>
+<!-- Data-alt attribute for image description -->
+<div class="hidden" data-alt="Abstract blue sound waveform bars animating on a clean background"></div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="w-full bg-white dark:bg-black py-24">
+<div class="mx-auto max-w-[980px] px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-text-main dark:text-white mb-4">
+                            Engineered for speed and privacy.
+                        </h2>
+<p class="text-lg md:text-xl text-text-secondary dark:text-gray-400 max-w-2xl mx-auto">
+                            Experience the power of local-first AI transcription without compromising your data.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-background-light dark:bg-surface-dark p-8 rounded-lg transition-transform hover:-translate-y-1 duration-300">
+<div class="h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<h3 class="text-xl font-semibold text-text-main dark:text-white mb-3">Instant Sync</h3>
+<p class="text-text-secondary dark:text-gray-400 leading-relaxed text-[15px]">
+                                Your clipboard history follows you. Copy a transcription on iPhone, paste it instantly on your Mac via iCloud.
+                            </p>
+</div>
+<!-- Card 2 -->
+<div class="group bg-background-light dark:bg-surface-dark p-8 rounded-lg transition-transform hover:-translate-y-1 duration-300">
+<div class="h-12 w-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-6 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="text-xl font-semibold text-text-main dark:text-white mb-3">Private by Design</h3>
+<p class="text-text-secondary dark:text-gray-400 leading-relaxed text-[15px]">
+                                Audio is processed locally on-device using CoreML. Your voice data never leaves your personal ecosystem.
+                            </p>
+</div>
+<!-- Card 3 -->
+<div class="group bg-background-light dark:bg-surface-dark p-8 rounded-lg transition-transform hover:-translate-y-1 duration-300">
+<div class="h-12 w-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h3 class="text-xl font-semibold text-text-main dark:text-white mb-3">Whisper AI Accuracy</h3>
+<p class="text-text-secondary dark:text-gray-400 leading-relaxed text-[15px]">
+                                Powered by an optimized version of OpenAI's Whisper model for industry-leading transcription accuracy.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Large Callout Section -->
+<section class="w-full max-w-[980px] px-6 py-24 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 w-full relative aspect-square md:aspect-[4/3] rounded-xl overflow-hidden bg-background-light dark:bg-surface-dark shadow-apple ring-1 ring-black/5 dark:ring-white/10" data-alt="Minimalist desk setup with Apple devices displaying transcription app" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNVTCWvr7Oz_N4DovmS5wGxo45DFClI0ne0OpMGFbnSIk2zRF_rPlE5nMuOW4Pm8Dlhj75hIgwxjlS3zJKb8iVZ1XtX2oEa4XthP0Wm_xwAnpXL80OQL_E7lLSgVbkaZODLyY5FL8IECbXr82Dyrm0f7SZkgdwnfbWwBPuSj8PV08HYy719owpCXjc-S3P8ofM8XLNi-HPdDPpgoKKdGAkbOvreDQzsuHy1jd7NGapTiQRcMkQnKo1FrjMo_vIhacHkrjk7Pys6h9Z'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black/10 dark:bg-black/40"></div>
+</div>
+<div class="flex-1 space-y-6">
+<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-text-main dark:text-white">
+                        Ready when you are.
+                    </h3>
+<p class="text-lg text-text-secondary dark:text-gray-400">
+                        DictateClip lives in your menu bar and Control Center. One tap to start recording, one tap to stop. Text is waiting in your clipboard before you even switch apps.
+                    </p>
+<ul class="space-y-3 pt-4">
+<li class="flex items-center gap-3 text-text-main dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Works offline</span>
+</li>
+<li class="flex items-center gap-3 text-text-main dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Supports 50+ languages</span>
+</li>
+<li class="flex items-center gap-3 text-text-main dark:text-gray-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Keyboard shortcuts support</span>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="w-full bg-background-light dark:bg-black border-t border-gray-200 dark:border-white/10 py-12">
+<div class="mx-auto max-w-[980px] px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-text-secondary dark:text-gray-500">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+<span class="text-xs">© 2024 DictateClip. All rights reserved.</span>
+</div>
+<div class="flex gap-6">
+<a class="text-xs text-text-secondary hover:text-text-main dark:text-gray-500 dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-text-secondary hover:text-text-main dark:text-gray-500 dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-xs text-text-secondary hover:text-text-main dark:text-gray-500 dark:hover:text-white transition-colors" href="#">Support</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
