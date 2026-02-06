@@ -14,7 +14,7 @@ export default function Home() {
                 onOpenPrivacy={() => setModalType('privacy')}
                 onOpenTerms={() => setModalType('terms')}
             />
-            <main className="flex-grow">
+            <main role="main" className="flex-grow">
                 <Hero />
                 <FeatureGrid />
             </main>

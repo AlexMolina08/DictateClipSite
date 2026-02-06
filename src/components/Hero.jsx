@@ -6,7 +6,7 @@ const SPRING_CONFIG = { mass: 1, stiffness: 150, damping: 20 };
 
 export default function Hero() {
     return (
-        <section className="pt-32 pb-20 px-6 flex flex-col items-center text-center max-w-5xl mx-auto">
+        <section aria-label="DictateClip - Voice to text app" className="pt-32 pb-20 px-6 flex flex-col items-center text-center max-w-5xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,10 @@ export default function Hero() {
             </motion.div>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <motion.button
+                <motion.a
+                    href="https://apps.apple.com/us/app/dictateclip-voice-to-clipboard/id6758665113"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     transition={SPRING_CONFIG}
@@ -59,9 +62,12 @@ export default function Hero() {
                 >
                     <Apple size={20} className="mb-0.5" />
                     <span>Download for iOS</span>
-                </motion.button>
+                </motion.a>
 
-                <motion.button
+                <motion.a
+                    href="https://apps.apple.com/us/app/dictateclip-voice-to-clipboard/id6758665113"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     transition={SPRING_CONFIG}
@@ -69,7 +75,7 @@ export default function Hero() {
                 >
                     <ArrowDownToLine size={20} />
                     <span>Download for Mac</span>
-                </motion.button>
+                </motion.a>
             </div>
         </section>
     );

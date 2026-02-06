@@ -28,7 +28,7 @@ const features = [
 
 export default function FeatureGrid() {
     return (
-        <section className="py-24 px-6 bg-white">
+        <section aria-label="Features" className="py-24 px-6 bg-white">
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {features.map((f, i) => (
                     <motion.div
