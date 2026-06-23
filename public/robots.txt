@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# TODO(launch): set the final auge domain. Vercel URL kept so live App Store links don't break.
 Sitemap: https://dictateclip-site.vercel.app/sitemap.xml

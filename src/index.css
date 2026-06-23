@@ -3,7 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background-light text-text-main font-sans antialiased;
+    @apply bg-cream-100 text-ink-900 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-coral-500/15 text-ink-900;
+  }
+}
+
+@layer utilities {
+  /* Dot-grid texture echoing the auge app canvas. Faint by design. */
+  .dot-grid {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .hairline {
+    @apply border border-ink-200;
   }
 }

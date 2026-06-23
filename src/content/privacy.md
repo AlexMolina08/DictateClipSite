@@ -1,20 +1,31 @@
-**Last Updated: February 5, 2026**
+**Last Updated: June 23, 2026**
+
+> TODO(legal): This privacy policy is a PLACEHOLDER. It must be rewritten to
+> reflect auge's actual data practices (video/caption processing, any cloud
+> rendering, on-device vs server processing, storage, and third parties) and
+> reviewed before launch. The text below is interim.
 
 **1. Introduction**
-DictateClip ("we") is committed to privacy. We operate under "Privacy by Design."
 
-**2. Data Collection**
-*   Voice Data: Sent temporarily to OpenAI API for transcription. NOT stored on our servers. Deleted immediately after processing.
-*   Transcriptions: Stored locally and synced via your personal iCloud (CloudKit). We cannot access them.
-*   Analytics: Anonymous aggregate data only.
+auge ("we") is committed to protecting your privacy. This policy explains how
+the auge app handles your information.
+
+**2. Data We Handle**
+
+- **Video & Audio:** You record talking-to-camera takes within the app. TODO(legal): describe where these are processed (on-device and/or server) and whether they are stored.
+- **Captions & Edits:** TODO(legal): describe how transcriptions/captions are generated and retained.
+- **Account & Subscriptions:** Managed by Apple; we do not receive your payment details.
 
 **3. Third Parties**
-*   OpenAI: Does not use API data for training models.
-*   Apple iCloud: End-to-end encrypted storage.
 
-**4. GDPR (EU)**
-*   Controller: DictateClip (Granada, Spain).
-*   Rights: You may delete data via the app (which removes it from iCloud).
+- TODO(legal): list any third-party services used for transcription/rendering/analytics and their data practices.
+
+**4. Your Rights**
+
+You may request deletion of your data. TODO(legal): describe how, including any in-app deletion.
 
 **5. Contact**
-support@dictateclip.com
+
+Email: support@auge.app <!-- TODO(launch): confirm support email -->
+
+<!-- TODO(launch): legal entity = auge, Granada, Spain — confirm. -->

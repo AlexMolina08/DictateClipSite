@@ -1,36 +1,44 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { AugeMark } from './AugeMark';
+import { SITE } from '../content/siteConfig';
+import { COPY } from '../content/copy';
 
-export default function Footer({ onOpenPrivacy, onOpenTerms }) {
-    return (
-        <footer role="contentinfo" className="py-12 border-t border-gray-200 bg-background-light">
-            <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
-                    <img src="/logo-gray.png" alt="DictateClip Logo" className="w-6 h-6 rounded-md opacity-80 grayscale" />
-                    <span className="text-sm text-text-secondary">© 2026 DictateClip. Granada, Spain.</span>
-                </div>
+export function Footer() {
+  return (
+    <footer className="border-t border-ink-200 bg-cream-100">
+      <div className="mx-auto flex max-w-editorial flex-col items-center justify-between gap-6 px-6 py-12 md:flex-row md:px-10">
+        <div className="flex items-center gap-2">
+          <AugeMark size={24} />
+          <span className="font-sans text-sm font-semibold lowercase tracking-tight text-ink-900">
+            {COPY.footer.tagline}
+          </span>
+        </div>
 
-                <div className="flex gap-6">
-                    <button
-                        onClick={onOpenPrivacy}
-                        className="text-sm text-text-secondary hover:text-text-main transition-colors"
-                    >
-                        Privacy Policy
-                    </button>
-                    <button
-                        onClick={onOpenTerms}
-                        className="text-sm text-text-secondary hover:text-text-main transition-colors"
-                    >
-                        Terms of Service
-                    </button>
-                    <Link
-                        to="/support"
-                        className="text-sm text-text-secondary hover:text-text-main transition-colors"
-                    >
-                        Support
-                    </Link>
-                </div>
-            </div>
-        </footer>
-    );
+        <nav className="flex items-center gap-6">
+          <Link
+            to="/privacy"
+            className="font-sans text-sm text-ink-500 transition-colors hover:text-ink-900"
+          >
+            Privacy
+          </Link>
+          <Link
+            to="/terms"
+            className="font-sans text-sm text-ink-500 transition-colors hover:text-ink-900"
+          >
+            Terms
+          </Link>
+          <Link
+            to="/support"
+            className="font-sans text-sm text-ink-500 transition-colors hover:text-ink-900"
+          >
+            Support
+          </Link>
+        </nav>
+
+        <p className="font-mono text-xs text-ink-400">
+          &copy; {new Date().getFullYear()} {SITE.legalEntity}
+        </p>
+      </div>
+    </footer>
+  );
 }
