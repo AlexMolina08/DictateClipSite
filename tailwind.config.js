@@ -30,7 +30,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
         sans: ['"IBM Plex Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
         mono: ['"JetBrains Mono"', '"SF Mono"', 'Menlo', 'monospace'],
       },

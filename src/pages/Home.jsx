@@ -1,7 +1,9 @@
 import { Nav } from '../components/Nav';
 import { Hero } from '../components/Hero';
-import { ClipRail } from '../components/ClipRail';
-import { Showreel } from '../components/Showreel';
+import { HowItWorks } from '../components/HowItWorks';
+import { Different } from '../components/Different';
+import { Showcase } from '../components/Showcase';
+import { Examples } from '../components/Examples';
 import { Close } from '../components/Close';
 import { Footer } from '../components/Footer';
 
@@ -11,8 +13,10 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <ClipRail />
-        <Showreel />
+        <HowItWorks />
+        <Examples />
+        <Different />
+        <Showcase />
         <Close />
       </main>
       <Footer />

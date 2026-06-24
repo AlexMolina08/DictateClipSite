@@ -4,17 +4,18 @@
 export const SITE = {
   name: 'auge',
 
-  // TODO(launch): replace with the real auge App Store URL/ID.
-  //   If auge is a new App Store record (not the old DictateClip id6758665113),
-  //   put its URL here. Every CTA on the site reads from this.
+  // auge ships under the same App Store record as DictateClip (same app,
+  //   renamed). Every CTA on the site reads from this.
   appStoreUrl: 'https://apps.apple.com/us/app/id6758665113',
 
   // TODO(launch): set the final auge domain. The Vercel URL is kept for now
   //   so existing App Store privacy/terms/support links do not break.
   siteUrl: 'https://dictateclip-site.vercel.app',
 
-  // TODO(launch): confirm the auge support email.
-  supportEmail: 'support@auge.app',
+  // Developer inbox for now (no auge.app domain yet). When the domain lands,
+  //   a free Cloudflare Email Routing / ImprovMX alias (hello@auge.app ->
+  //   this inbox) is the better-than-gmail upgrade.
+  supportEmail: 'developergodmode@gmail.com',
 
   // TODO(launch): confirm legal entity name + jurisdiction.
   legalEntity: 'auge',
